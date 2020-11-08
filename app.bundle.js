@@ -11187,15 +11187,20 @@ var Vue = function(exports) {
 }({
 });
 const Sample = {
-    data () {
+    data: function() {
         return {
-            message: "Hello Deno!"
+            count: 3
         };
     },
-    template: `<div>{{message}}</div>`
+    methods: {
+        countUp: function() {
+            this.count++;
+        }
+    },
+    template: `\n    <div>\n      <p>{{ count }}</p>\n      <button @click="countUp">count up</button>\n    </div>\n  `
 };
 const Main = {
-    template: `<Sample></Sample>`
+    template: `<Sample />`
 };
 app = Vue.createApp(Main);
 app.component("Sample", Sample);

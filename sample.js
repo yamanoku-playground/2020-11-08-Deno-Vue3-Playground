@@ -1,8 +1,18 @@
 export const Sample = {
-  data() {
+  data: function () {
     return {
-      message: "Hello Deno!",
-    };
+      count: 3
+    }
   },
-  template: `<div>{{message}}</div>`,
+  methods: {
+    countUp: function(){
+      this.count++
+    }
+  },
+  template: `
+    <div>
+      <p>{{ count }}</p>
+      <button @click="countUp">count up</button>
+    </div>
+  `,
 };
