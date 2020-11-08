@@ -11195,9 +11195,12 @@ const Sample = {
     methods: {
         countUp: function() {
             this.count++;
+        },
+        countDown: function() {
+            this.count--;
         }
     },
-    template: `\n    <div>\n      <p>{{ count }}</p>\n      <button @click="countUp">count up</button>\n    </div>\n  `
+    template: `\n    <div>\n      <p>{{ count }}</p>\n      <button @click="countUp">count up</button>\n      <button @click="countDown">count down</button>\n    </div>\n  `
 };
 const Main = {
     template: `<Sample />`
